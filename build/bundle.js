@@ -1,4 +1,3 @@
-/*! test the banner plugin */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -71,11 +70,13 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-function testModule() {
-  console.log('module');
-  return 'module aaa module';
+function generateText() {
+  var element = document.createElement('h2');
+  element.innerHTML = "Hello world in sub.js second";
+  return element;
 }
-module.exports = testModule;
+
+module.exports = generateText;
 
 /***/ }),
 /* 1 */
@@ -93,8 +94,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!./node_modules/css-loader/index.js!./style.css", function() {
-			var newContent = require("!!./node_modules/css-loader/index.js!./style.css");
+		module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/lib/loader.js!./style.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -107,9 +108,19 @@ if(false) {
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(1) // 载入 style.css
-document.write('It works.')
-document.write(__webpack_require__(0)());
+var sub = __webpack_require__(0);
+__webpack_require__(1);
+var moment = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"moment\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var app  = document.createElement('div');
+var node = document.createDocumentFragment();
+var timer = document.createElement('p');
+timer.innerHTML = 'now is: ' + moment().format('YYYY-MM-DD');
+node.append(timer);
+app.innerHTML = '<h1>Hello webpacksdfasdaa</h1>';
+app.appendChild(sub());
+app.appendChild(node);
+document.body.appendChild(app);
 
 /***/ }),
 /* 3 */
@@ -120,7 +131,7 @@ exports = module.exports = __webpack_require__(4)();
 
 
 // module
-exports.push([module.i, "/* style.css */\nbody { background: purple; }", ""]);
+exports.push([module.i, "h1 {\n  color: tomato;\n  background: url(" + __webpack_require__(6) + "); }\n", ""]);
 
 // exports
 
@@ -432,6 +443,12 @@ function updateLink(linkElement, obj) {
 		URL.revokeObjectURL(oldSrc);
 }
 
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "83f8ca133f8832b9de6690cc8759590f.jpg";
 
 /***/ })
 /******/ ]);
