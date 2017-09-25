@@ -9,7 +9,7 @@ var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
 module.exports = {
   entry: {
-    app: path.resolve(APP_PATH, 'index.jsx')
+    app: path.resolve(APP_PATH, 'index.js')
   },
   output: {
     path: BUILD_PATH,

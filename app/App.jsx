@@ -1,6 +1,5 @@
 import '../node_modules/bootstrap/scss/bootstrap.scss';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import SearchBox from './SearchBox';
 import Plist from './Plist';
 
@@ -30,6 +29,4 @@ class App extends React.Component {
   }
 }
 
-const app = document.createElement('div');
-document.body.appendChild(app);
-ReactDOM.render(<App />, app);
+export default App;
