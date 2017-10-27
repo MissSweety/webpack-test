@@ -7,6 +7,7 @@ var ROOT_PATH = path.resolve(__dirname);
 var APP_PATH = path.resolve(ROOT_PATH, 'app');
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
+// stage-2 for js 扩展运算符
 module.exports = {
   entry: {
     app: path.resolve(APP_PATH, 'index.js')
@@ -19,7 +20,7 @@ module.exports = {
     loaders: [
       {test: /\.scss$/, loader: ['style-loader?sourceMap', 'css-loader?sourceMap', 'sass-loader?sourceMap']},
       {test: /\.(png|jpg)$/, use: [{ loader: 'url-loader', options: { limit: 8000 },}]},
-      {test: /\.jsx?$/, loader: 'babel-loader', include: APP_PATH, query: { presets: ['es2015', 'react']}},
+      {test: /\.js?$/, loader: 'babel-loader', include: APP_PATH, query: { presets: ['es2015', 'stage-2', 'react']}},
     ],
   },
   devServer: {

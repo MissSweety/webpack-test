@@ -52,3 +52,11 @@ debugger方法：
       resolve: { fallback: path.join(__dirname, "node_modules") },
       resolveLoader: { fallback: path.join(__dirname, "node_modules") }
       };
+
+
+## 运行
+npm run dev
+
+访问：localhost:9090
+
+
