@@ -1,5 +1,3 @@
-import '../node_modules/bootstrap/scss/bootstrap.scss';
-import './style.scss';
 import React from 'react';
 import SearchBox from './SearchBox';
 import Plist from './Plist';
