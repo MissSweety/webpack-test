@@ -7,6 +7,7 @@ var ROOT_PATH = path.resolve(__dirname);
 var APP_PATH = path.resolve(ROOT_PATH, 'app');
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
+process.env.NODE_ENV = 'production';
 // stage-2 for js 扩展运算符
 module.exports = {
   entry: {
@@ -18,6 +19,7 @@ module.exports = {
   },
   module: {
     loaders: [
+      {test: /\.css$/, loader: ['style-loader?sourceMap', 'css-loader?sourceMap']},
       {test: /\.scss$/, loader: ['style-loader?sourceMap', 'css-loader?sourceMap', 'sass-loader?sourceMap']},
       {test: /\.(png|jpg)$/, use: [{ loader: 'url-loader', options: { limit: 8000 },}]},
       {test: /\.js?$/, loader: 'babel-loader', include: APP_PATH, query: { presets: ['es2015', 'stage-2', 'react']}},
@@ -33,7 +35,7 @@ module.exports = {
   devtool: 'eval-source-map',
   plugins: [
     new HtmlwebpackPlugin({
-      title: 'Hello World app'
+      title: 'webpack-test'
     }),
     new webpack.ProvidePlugin({
       R: 'ramda'

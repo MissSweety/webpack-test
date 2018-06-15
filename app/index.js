@@ -6,12 +6,15 @@ import { Provider } from 'react-redux';
 import reducer from './reducers/index.js';
 import { Router, Route, browserHistory } from 'react-router';
 
-import App from './App';
-import Test from './TestCon';
-import WebCon from './WebContainer';
+import App from './containers/App';
+import TestChart from './containers/TestChart';
+import WebCon from './containers/WebContainer';
+import HocContainer from './containers/HocContainer';
+import CalApp from './containers/CalCon';
+
 // for redux-devtools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-// for action enhancer
+
 import '../node_modules/bootstrap/scss/bootstrap.scss';
 import './style.scss';
 
@@ -38,7 +41,9 @@ render(
     <Router history={browserHistory}>
     	<Route path="/" component={App} />
     	<Route path="/web" component={WebCon} />
-    	<Route path="/test" component={Test} />
+    	<Route path="/chart" component={TestChart} />
+      <Route path="/hoc" component={HocContainer} />
+      <Route path="/calendar" component={CalApp} />
     </Router>
   </Provider>,
   app
