@@ -1,0 +1,47 @@
+.calendar-con {
+  min-width: 300px;
+  border: 1px solid #eee;
+}
+.calendar-header-con {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  color: #aaa;
+}
+.calendar-header-con span {
+  display: inline-block;
+  cursor: pointer;
+}
+.calendar-header-con .header-display {
+  margin: 0 20px;
+  color: #333;
+}
+.board-con {
+  width: 100%;
+}
+.board-con thead th,
+.board-con tbody td {
+  text-align: center;
+}
+.board-con tr {
+  height: 40px;
+}
+.board-con thead {
+  color: #56e;
+  border-bottom: 1px solid #56e;
+}
+.board-con .prev-month,
+.board-con .next-month {
+  color: #ccc;
+}
+.board-con tbody span {
+  display: inline-block;
+  height: 36px;
+  width: 36px;
+  line-height: 36px;
+}
+.board-con .today span {
+  color: white;
+  border-radius: 50%;
+  background: #56e;
+}
